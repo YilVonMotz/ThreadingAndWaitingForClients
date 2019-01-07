@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Net.Sockets;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ThreadingAndWaitingForClients
 {
@@ -26,13 +27,21 @@ namespace ThreadingAndWaitingForClients
 
         private static void WaitForClient()
         {
+            TcpClient connectedClient;
+
             tcpListener.Start();
             do
             {
+                connectedClient = tcpListener.AcceptTcpClient();
                 Console.WriteLine("waiting...");
-            } while (tcpListener.AcceptTcpClient() == null);
+            } while (connectedClient == null);
 
             Console.WriteLine("ClientConnected");
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            //string sentFromClient = (string)binaryFormatter.Deserialize(connectedClient.GetStream());
+            //Console.WriteLine(sentFromClient);
+            AClass aclass = (AClass)binaryFormatter.Deserialize(connectedClient.GetStream());
+            Console.WriteLine(aclass.eineZahl + " / " + aclass.einString);
             tcpListener.Stop();
             waitEnded = true;
         }
@@ -50,8 +59,19 @@ namespace ThreadingAndWaitingForClients
             TcpClient myClient = new TcpClient();
             Thread.Sleep(3000);
             myClient.Connect(iPEndPoint);
+            NetworkStream netStream =  myClient.GetStream();
+            //string einText = "blubba";
+            AClass aclass = new AClass();
+
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(netStream, aclass);
         }
     }
        
-    
+    [Serializable]
+    public class AClass
+    {
+        public int eineZahl = 5;
+        public string einString = "dakjföadjk";
+    }
 }
