@@ -1,0 +1,7 @@
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\bin\Debug\ThreadingAndWaitingForClients.exe.config
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\bin\Debug\ThreadingAndWaitingForClients.exe
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\bin\Debug\ThreadingAndWaitingForClients.pdb
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\obj\Debug\ThreadingAndWaitingForClients.csprojAssemblyReference.cache
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\obj\Debug\ThreadingAndWaitingForClients.csproj.CoreCompileInputs.cache
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\obj\Debug\ThreadingAndWaitingForClients.exe
+C:\Users\ydere\source\repos\ThreadingAndWaitingForClients\ThreadingAndWaitingForClients\obj\Debug\ThreadingAndWaitingForClients.pdb
